@@ -2,20 +2,24 @@ import React from 'react';
 import { Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from '@material-ui/core';
 import { PhotoCamera } from '@material-ui/icons';
 
+import useStyles from './styles';
+
 const App = () => {
+    const classes = useStyles();
+
     return (
         <>
             <CssBaseline />
             <AppBar position='relative'>
                 <Toolbar>
-                    <PhotoCamera />
+                    <PhotoCamera className={classes.icon} />
                     <Typography variant='h6'>
                         Bhanu's Photo Album
-                    </Typography>
+                    </Typography> 
                 </Toolbar>
             </AppBar>
             <main>
-                <div>
+                <div className={classes.container}>
                     <Container maxWidth="sm">
                         <Typography variant='h2' align='center' color='textPrimary' gutterBottom>
                             Photo Album
@@ -23,7 +27,7 @@ const App = () => {
                         <Typography variant='h5' align='center' color='textSecondary' paragraph>
                             This is a photo album from my favourite spots around the world. Hope you like and enjoy it as well! 
                         </Typography>
-                        <div>
+                        <div  className={classes.buttons}>
                             <Grid container spacing={2} justifyContent='center'>
                                 <Grid item>
                                     <Button variant='contained' color="primary">
